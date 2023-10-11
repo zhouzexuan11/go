@@ -1,0 +1,19 @@
+from sklearn.tree import DecisionTreeClassifier
+
+# 训练数据集，特征是水果的重量和纹理，标签是水果的类型
+X = [[150, 0], [170, 0], [140, 1], [130, 1]]
+y = ['苹果', '苹果', '橙子', '橙子']
+
+# 创建决策树分类器
+clf = DecisionTreeClassifier()
+
+# 使用训练数据拟合分类器
+clf.fit(X, y)
+
+# 现在可以使用分类器进行预测
+# 在这个示例中，预测一个水果的类型，给定其重量和纹理
+# 0表示光滑，1表示有纹理
+test_data = [[160, 0]]
+prediction = clf.predict(test_data)
+
+print("预测结果:", prediction[0])
