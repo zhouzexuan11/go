@@ -1,0 +1,23 @@
+import cv2  
+import numpy as np  
+  
+# 读取图片  
+image = cv2.imread('your_image_path.jpg')  # 替换为您的图片路径  
+  
+# 检查图片是否成功加载  
+if image is None:  
+    print("Error: 图片未成功加载，请检查路径是否正确")  
+else:  
+    # 将图片转换为灰度图  
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  
+  
+    # 应用 Canny 边缘检测  
+    edges = cv2.Canny(gray, 100, 200)  
+  
+    # 显示原图和边缘检测结果  
+    cv2.imshow('Original Image', image)  
+    cv2.imshow('Edges', edges)  
+  
+    # 等待按键操作  
+    cv2.waitKey(0)  
+    cv2.destroyAllWindows()
